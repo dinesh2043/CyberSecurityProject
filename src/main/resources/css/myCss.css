@@ -1,0 +1,68 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+}
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+} 
+#user li{
+    float: none;
+}
+#elementStyle li {
+    padding: 12px 45px;
+    margin: 10px 10px 10px 10px;
+    border-top: 2px solid red;
+    list-style-type: none;
+    border-bottom: 1px solid gray;
+}
+form {
+    background-color:lightgray;
+    padding: 14px 16px;
+    margin-bottom: 6px;
+    border: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+table{
+    display: block;
+    background-color:lightgray;
+    text-align: left;
+    padding: 14px 16px;
+    margin-bottom: 6px;
+    border: 2px solid gray;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+#login{
+    width: 70px;
+    background-color: #333;
+    text-align: left;
+    text-decoration: none;
+}
+#login a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+}
+#login a:hover {
+    background-color: #111;
+}
+
+        

@@ -1,0 +1,12 @@
+2017-02-08 21:40:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+INSERT INTO Signup(username, address, password) VALUEShjhdf, ulklkj, $2a$10$wSlQ3SY0hbveL8A1twHnHupu8DbEdA8k9bOSiLm5qC7mbtKHBENiW [42102-193]
+2017-02-08 21:46:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+INSERT INTO Signup(username, address, password) VALUESTestname, Testaddress, $2a$10$AQt43sof.cmfj.Q6e2zJdenmB.ErbPunY99KGS5b/a6wRICqbfDjy [42102-193]
+2017-02-08 21:46:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SIGNUP" not found; SQL statement:
+INSERT INTO Signup(username, address, password) VALUESklkkk, hhh, $2a$10$2OgwRPUfnEV5hrxIMCipxeLrv2bTfmXdGVoRty7dRHaIFYPKO8A9m [42102-193]
+2017-02-08 21:48:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ROLE" not found; SQL statement:
+INSERT INTO Role(name) VALUES ROLE_MEMBER [42102-193]

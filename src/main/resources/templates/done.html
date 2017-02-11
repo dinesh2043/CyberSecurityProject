@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Welcome !</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/myCss.css}" href="/css/myCss.css"/>
+    </head>
+    <body>
+        <header th:replace="fragments/header :: header"></header>
+        
+        <h2>Welcome to the forum !</h2>
+        <p id="login" th:switch ="${authenticated}">
+                <a th:case = "*" th:href="@{/logout}">Logout</a>
+                <a th:case = "null"></a>
+        </p>
+        <p>Hi <a th:text="${authenticated}"></a> </p>
+        <form action="#" th:action="@{/done}" method="POST" >
+            <p><label>Search User With ID </label>:<input type='text' name='id' value=''/></p>
+            <input type='submit' value='Submit'/>
+            
+            <ul id = "user">
+            <li th:each="item : ${list}">
+                <p><label style="color:lightcoral">Username</label>:<span style="color:white" th:text="${item}">hello world!</span></p>
+            </li>
+        </ul>
+        </form> 
+        <ul id="elementStyle">
+            <!-- ********With inputs escaping****** 
+            <li th:each="contribution : ${contributions}">
+                <p><label style="color:lightcoral">Username</label>:<span style="color:white" th:text="${contribution.signup?.username}">User Name</span></p>
+                <p><label style="color:lightcoral">Subject</label>:<span style="color:white" th:text="${contribution.subject}">Subject</span></p>
+                <p><label style="color:lightcoral">Message</label>:<span style="color:white" th:text="${contribution.message}">Message</span></p>
+            </li>
+            -->
+            <!-- ********Without inputs escaping****** -->
+            <li th:each="contribution : ${contributions}">
+                <p><label style="color:lightcoral">Username</label>:<span style="color:white" th:utext="${contribution.signup?.username}">User Name</span></p>
+                <p><label style="color:lightcoral">Subject</label>:<span style="color:white" th:utext="${contribution.subject}">Subject</span></p>
+                <p><label style="color:lightcoral">Message</label>:<span style="color:white" th:utext="${contribution.message}">Message</span></p>
+            </li>
+        </ul>
+        <h2>Your's Opinion !</h2>
+        <form action="#" th:action="@{/contribution}" method="POST">
+            <p><label for="subject">Subject</label>: <input type="text" name="subject" id="subject"/></p>
+            <p><label for="message">Message</label>:</p>
+            <textarea name="message" id="message" cols="50" rows="5"> Enter some text...</textarea>
+            <br />
+            <input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+       
+    </body>
+</html>

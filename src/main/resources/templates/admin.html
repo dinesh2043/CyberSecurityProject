@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin pannel</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/myCss.css}" href="/css/myCss.css"/>
+    </head>
+    <body>
+        <header th:replace="fragments/header :: header"></header>
+        
+        <h2>User and their Roles</h2>
+        <p id="login"><a th:href="@{/logout}">Logout</a></p>
+        <p>Hi <a th:text="${authenticated}"></a> </p>
+            <table>
+                <tr>
+                    <th>UserID</th>
+                    <th>UserName</th>
+                    <th>Address</th>
+                    <th>RoleName</th>
+                </tr>
+                <tr th:each="role : ${roles}">
+                     
+                    <td th:text="${role.signup.id}">UserID</td>
+                    <td th:text="${role.signup.username}">UserName</td>
+                    
+                    <!-- *****without input escaping***** -->
+                    <td th:utext="${role.signup.address}">Address</td>
+                    
+                    <!-- ********With inputs escaping******
+                    <td th:text="${role.signup.address}">Address</td>
+                    -->
+                    <td th:text="${role.name}">RoleName</td>
+                    
+                </tr>
+            </table>
+        
+    </body>
+</html>

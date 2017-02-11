@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Header template</title>
+    </head>
+    <body>
+
+        <header th:fragment="header">
+            <ul id = "nev">   
+                <li><a th:href="@{/index}">Signup</a></li>
+                <li><a th:href="@{/admin}">Admin</a></li>
+                <li><a th:href="@{/done}">Forum</a></li>
+                
+            </ul>
+        </header>
+
+    </body>
+</html>

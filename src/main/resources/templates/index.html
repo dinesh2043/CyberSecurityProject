@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Sign up form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/myCss.css}" href="/css/myCss.css"/>
+    </head>
+    <body>
+        <header th:replace="fragments/header :: header"></header>
+        
+        <h2>Sign up to the event using this form</h2>
+        <p th:switch ="${signup}">
+            <a th:case = "sucessful" style="color:green">Signup Sucessful!</a>
+            <a th:case = "null"></a>
+        </p>
+        <p id="login" th:switch ="${authenticated}">
+                <a th:case = "true" th:href="@{/logout}">Logout</a>
+                <a th:case = "false" th:href="@{/login}">Login</a>
+                <a th:case = "null" th:href="@{/login}">Login</a>
+            </p>
+        <form action="#" th:action="@{/index}" method="POST">
+            <p><label for="username">User Name</label>: <input type="text" name="username" id="username"/></p>
+            <p><label for="address">Address</label>: <input type="text" name="address" id="address"/></p>
+            <p><label for="password">Password</label>:<input type="password" id="password" name="password" /></p>
+            <input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+
+        <p></p>
+    </body>
+</html>

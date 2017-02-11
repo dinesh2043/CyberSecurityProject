@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Admin pannel</title>
+     <link rel="stylesheet" type="text/css" th:href="@{/css/myCss.css}" href="/css/myCss.css"/>
+    </head>
+    <body>
+        <header th:replace="fragments/header :: header"></header>
+        <br/>
+        <h2>Not an Admin User!</h2>
+            <table><tr><th>You must have Administrator Role to view this page</th></tr></table>
+    </body>
+</html>
