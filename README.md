@@ -3,10 +3,11 @@
 
 As a default I have created 3 default users to provide the login, authentication and authorization features for the application. This is the web forum application which provides the features to create a user account and post comment in the forum. The login credentials of those user for using application are as follows;
 
-User Name	Password
-admin	admin
-user	user
-userA	userA
+User Name | Password
+--------- | --------
+admin | admin
+user | user
+userA | userA
 
 The vulnerabilities available in this application are discussed in the upcoming section of this document. In the beginning there are steps to check the vulnerabilities and after that there is a discussion on how to prevent these security flaws.
 
