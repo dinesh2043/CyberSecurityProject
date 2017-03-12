@@ -10,7 +10,7 @@ userA	userA
 
 The vulnerabilities available in this application are discussed in the upcoming section of this document. In the beginning there are steps to check the vulnerabilities and after that there is a discussion on how to prevent these security flaws.
 
-### Issue: SQL Injection
+### Issue 1: SQL Injection
 ####Steps to reproduce:
 1. Login to the application using username and password mentioned above.
 2. Go to the Forum page
@@ -21,7 +21,7 @@ The vulnerabilities available in this application are discussed in the upcoming 
 
 This security vulnerabilities can be overcome using prepared statements where user inputs can be escaped and validated. In this application I have used JPA which are secured from SQL injection the code for this implementation can be found in ForumController class inside findUser() method. This secured codes are commented to show the execution of unsecured execution of SQL statements.
     
-### Issue: Stored XSS Attack
+### Issue 2: Stored XSS Attack
 #### Steps to reproduce:
 1. Open the signup page of the application
 2. Signup form appears in the page
@@ -34,7 +34,7 @@ This security vulnerabilities can be overcome using prepared statements where us
 
 This security vulnerability can be prevented by validating the user inputs in the client side, while displaying the data stored in the database the data can be escaped to use it as data but not a script. To prevent the storing of these data into the database we can enable csrf() method in security configuration file and using this ```HTML <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />``` script in index.html page.
 
-### Issue: Access Control
+### Issue 3: Access Control
 #### Steps to reproduce:
 1. Login as admin user and check the role of userA, it is ROLE_USER and ROLE_USER should not have admin rights to the application.
 2. Login to the application using userA as both username and password.
@@ -43,7 +43,7 @@ This security vulnerability can be prevented by validating the user inputs in th
 
 This vulnerability is cause by the broken authentication and authorization for admin page. Security configuration should provide access to the Admin page for user with role “ROLE_ADMIN”, but it has been misconfigured and it provides access with ROLE_USER also. This can be fixed by removing the role USER from the access of Admin page.
 
-### Issue: CSRF Prompt-By Pass
+### Issue 4: CSRF Prompt-By Pass
 #### Steps to reproduce:
 1. Login to the application.
 2. Go to the Forum page.
@@ -67,7 +67,7 @@ onload="document.getElementById('image2').src='http://localhost:8081/WebGoat/att
 
 These vulnerabilities can also be prevented by following the procedure explained in the section of stored XSS attack.
 
-### Issue: Insecure Direct Object Reference
+### Issue 5: Insecure Direct Object Reference
 #### Steps to reproduce:
 1. Run the application
 2. Try to access to this file through URL: “http://localhost:8080/css/hibernate.reveng.sql”
@@ -77,7 +77,7 @@ These vulnerabilities can also be prevented by following the procedure explained
 
 This is the vulnerability caused by providing the unnecessary access to the files of the application. We can prevent this by removing the access provided to this file in security configuration file in line 34.
 
-### Issue: Using Vulnerable Software Development Libraries
+### Issue 6: Using Vulnerable Software Development Libraries
 #### Steps to reproduce:
 1. Go to the pom.xml and remove the comments for plugins for dependency check. 
 2. Run maven dependency check to see the software vulnerabilities of used libraries versions.
