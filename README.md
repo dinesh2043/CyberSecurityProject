@@ -26,13 +26,13 @@ This security vulnerabilities can be overcome using prepared statements where us
 1. Open the signup page of the application
 2. Signup form appears in the page
 3. Provide normal username and password.
-3. In address field type this XSS script "<Script>alert(document.cookie);</Script>".
+3. In address field type this XSS script ``` javascript <Script>alert(document.cookie);</Script> ```.
 4. Submit the signup request.
 5. Now, login as an admin user to see the signup information’s.
 6. Click the Admin page.
 7. When the Admin page loads it displays the alert message stored in database.
 
-This security vulnerability can be prevented by validating the user inputs in the client side, while displaying the data stored in the database the data can be escaped to use it as data but not a script. To prevent the storing of these data into the database we can enable csrf() method in security configuration file and using this “<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />” script in index.html page.
+This security vulnerability can be prevented by validating the user inputs in the client side, while displaying the data stored in the database the data can be escaped to use it as data but not a script. To prevent the storing of these data into the database we can enable csrf() method in security configuration file and using this ```HTML <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />``` script in index.html page.
 
 ### Issue: Access Control
 #### Steps to reproduce:
