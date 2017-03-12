@@ -78,7 +78,7 @@ These vulnerabilities can also be prevented by following the procedure explained
 This is the vulnerability caused by providing the unnecessary access to the files of the application. We can prevent this by removing the access provided to this file in security configuration file in line 34.
 
 ### Issue: Using Vulnerable Software Development Libraries
-### Steps to reproduce:
+#### Steps to reproduce:
 1. Go to the pom.xml and remove the comments for plugins for dependency check. 
 2. Run maven dependency check to see the software vulnerabilities of used libraries versions.
 3. When the dependency check is complete, html file will be created in target folder
